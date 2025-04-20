@@ -27,7 +27,7 @@ int main()
 
   while(true){
     string item;
-    int stock;
+    int stock = 0;
     bool isNewItem = true;
     
     system("clear");
@@ -51,7 +51,7 @@ int main()
     
     /* Prompt user to which item to create or update */
     cout << endl << "\033[2m[Case sensitive & Max of " << MAXINPUT << " characters or type `exit` to terminate program]\033[0m"
-        << endl << "Item to update: ";
+    << endl << "Item to update: ";
     getline(cin, item);
 
     if(item.length() > MAXINPUT)
@@ -60,19 +60,39 @@ int main()
     if(item == "exit")
       break;
 
+
     /* Check if item already exist */
     for(auto i: items)
       if(i.first == item){
         isNewItem = false;
+        stock = i.second;
         break;
       }
     if(isNewItem)
-      cout << "\033[3mNew item \033[32m" << item << "\033[39m will be created.\033[0m" << endl;
+      cout << endl << "\033[3mNew item \033[32m" << item << "\033[39m will be created.\033[0m" << endl;
     
       /* Prompt user for the stock count */
-    cout << "# of stocks for \033[32m" << item << "\033[0m: ";
-    cin >> stock;
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    do{
+      if(cin.fail() || stock < 0 || stock > STOCKLIMIT){
+        cout << "\033[31mInvalid #, Please again. [0-"<< STOCKLIMIT <<" only]\033[0m" << endl;
+        if(cin.fail()){
+          cin.clear();
+          cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        }
+        if(isNewItem)
+          stock = 0;
+        else{
+          for(auto i: items)
+            if(i.first == item){
+              stock = i.second;
+              break;
+            }
+        }
+      }
+      cout << "# of stocks for \033[32m" << item << "\033[0m: ";
+      cin >> stock;
+      cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    } while (cin.fail() || stock < 0 || stock > STOCKLIMIT);
 
     /* Updating the table */
     if(isNewItem)
