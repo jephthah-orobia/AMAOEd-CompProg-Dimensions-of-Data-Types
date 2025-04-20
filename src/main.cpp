@@ -11,13 +11,14 @@
 #include <iostream>
 #include <iomanip>
 #include <limits>
+#include <vector>
 
 using namespace std;
 
 int main()
 {
   const int MAXINPUT = 20, STOCKLIMIT=99999;
-  pair<string, int> items[4] = {
+  vector<pair<string, int>> items = {
     {"Apples", 10},
     {"Bananas", 20},
     {"Oranges", 15},
