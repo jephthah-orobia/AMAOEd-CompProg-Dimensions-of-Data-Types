@@ -1,39 +1,17 @@
-# C++ Programming Language | VS Code
+# About this repo
+> This contains demo examples for the lesson "Dimensions of Data Types" discussed by [Jephthah M. Orobia](https://github.com/jephthah-orobia).
 
-This repository contains a development environment for Visual Studio code to be used by C++ Programming Language of AMA Online Education.
+> To see the examples. Please see each branches of this repo. Each example is on its own branch.
 
-## Running on your Windows Machine
+> View the actual recorded video discussion in [youtu.be/Fx1lzh9BeD0](https://youtu.be/Fx1lzh9BeD0)
 
-Before pressing "F5" or debugging, go to `Run and Debug` tab and from the dropdown change to `C++ Launch [windows local]`. Now you can press start debugging. Make sure your [MinGW](https://sourceforge.net/projects/mingw/) is installed on C:/MinGW, otherwise, you'll need to modify the configuration file on [.vscode/launch.json(Line 63)](.vscode/launch.json#63).
+## Demo Examples:
 
-I made the application run on external terminal so you get the feel of what it's like when the application is running on it's own.
+### [Temparature Monitoring System](https://github.com/jephthah-orobia/AMAOEd-CompProg-Dimensions-of-Data-Types/tree/Ex1-TempMonSys)
+This example shows how to use arrays to store multiple values and process them later. Checkout the branch [Ex1-TempMonSys](https://github.com/jephthah-orobia/AMAOEd-CompProg-Dimensions-of-Data-Types/tree/Ex1-TempMonSys).
 
-## Running on container
+### [Inventory Management System](https://github.com/jephthah-orobia/AMAOEd-CompProg-Dimensions-of-Data-Types/tree/Ex2-IMS)
+This example shows how to access values in an array. Checkout the branch [Ex2-IMS](https://github.com/jephthah-orobia/AMAOEd-CompProg-Dimensions-of-Data-Types/tree/Ex2-IMS).
 
-Instead of cloning this repo, you can run it on codespace. In that environment you don't need to change anything, just run it.
-
-**Table of Contents**
-
-- [Getting Started](docs/getting-started/README.md)
-  - [Dev Container](docs/getting-started/dev-container/README.md)
-    - [Installing the Pre-requisites](docs/getting-started/dev-container/README.md#installing-the-pre-requisites)
-      - [Windows](docs/getting-started/dev-container/windows.md)
-      - [macOS](docs/getting-started/dev-container/osx.md)
-      - [Linux](docs/getting-started/dev-container/linux.md)
-    - [Configuring the Visual Studio Code](docs/getting-started/dev-container/README.md#configuring-the-visual-studio-code)
-    - [Cloning the Git Repository](docs/getting-started/dev-container/README.md#cloning-the-git-repository)
-    - [Opening in Dev Container](docs/getting-started/dev-container/README.md#opening-in-dev-container)
-  - [Bare Metal](docs/getting-started/bare-metal/README.md)
-    - [Installing the Pre-requisites](docs/getting-started/bare-metal/README.md#installing-the-pre-requisites)
-      - [Windows](docs/getting-started/bare-metal/windows.md)
-      - [macOS](docs/getting-started/bare-metal/osx.md)
-      - [Linux](docs/getting-started/bare-metal/linux.md)
-    - [Configuring the Visual Studio Code](docs/getting-started/bare-metal/README.md#configuring-the-visual-studio-code)
-    - [Cloning the Git Repository](docs/getting-started/bare-metal/README.md#cloning-the-git-repository)
-    - [Opening in Bare Metal](docs/getting-started/bare-metal/README.md#opening-in-bare-metal)
-- [Maintenace](docs/maintenance/README.md)
-  - [Updating the CMake Version](docs/maintenance/README.md#updating-the-cmake-version)
-  - [Updating the Dev Container Image](docs/maintenance/README.md#updating-the-dev-container-image)
-
-
-
+### [Theatre Seats](https://github.com/jephthah-orobia/AMAOEd-CompProg-Dimensions-of-Data-Types/tree/Ex3-TheatreSeats)
+This example shows how to use a 2D-Array in managing a theatre seating reservation. Checkout the branch [Ex3-TheatreSeats](https://github.com/jephthah-orobia/AMAOEd-CompProg-Dimensions-of-Data-Types/tree/Ex3-TheatreSeats).
