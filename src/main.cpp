@@ -10,6 +10,7 @@
 #include <string>
 #include <iostream>
 #include <iomanip>
+#include <limits>
 
 using namespace std;
 
@@ -24,9 +25,11 @@ int main()
   };
 
   while(true){
-    system("clear");
     string item;
     int stock;
+    bool isNewItem = true;
+    
+    system("clear");
 
     /* Display Title */
     cout << "Inventory Management System" << endl << endl;
@@ -49,17 +52,33 @@ int main()
     cout << endl << "\033[2m[Case sensitive & Max of " << MAXINPUT << " characters or type `exit` to terminate program]\033[0m"
         << endl << "Item to update: ";
     getline(cin, item);
-    if(item.length() > MAXINPUT){
-      item = item.substr(0, MAXINPUT);
-    }
-    cout << item << endl;
 
+    if(item.length() > MAXINPUT)
+      item = item.substr(0, MAXINPUT);
+    
     if(item == "exit")
       break;
 
+    /* Check if item already exist */
+    for(auto i: items)
+      if(i.first == item){
+        isNewItem = false;
+        break;
+      }
+    if(isNewItem)
+      cout << "\033[3mNew item \033[32m" << item << "\033[39m will be created.\033[0m" << endl;
     /* Prompt user for the stock count */
-    cout << "Stock #: ";
+    cout << "# of stocks for \033[32m" << item << "\033[0m: ";
     cin >> stock;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    if(isNewItem)
+      cout << "A new item is created (to be implemented)" << endl;
+    else{
+      for(auto& i: items){
+        if(i.first == item)
+          i.second = stock;
+      }
+    }
   }
   
   return EXIT_SUCCESS;
