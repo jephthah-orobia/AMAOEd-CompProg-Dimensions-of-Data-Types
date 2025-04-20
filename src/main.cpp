@@ -68,14 +68,17 @@ int main()
       }
     if(isNewItem)
       cout << "\033[3mNew item \033[32m" << item << "\033[39m will be created.\033[0m" << endl;
-    /* Prompt user for the stock count */
+    
+      /* Prompt user for the stock count */
     cout << "# of stocks for \033[32m" << item << "\033[0m: ";
     cin >> stock;
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+    /* Updating the table */
     if(isNewItem)
-      cout << "A new item is created (to be implemented)" << endl;
+      items.emplace_back(make_pair(item, stock)); // create new entry if the item is new.
     else{
-      for(auto& i: items){
+      for(auto& i: items){ // update table if item already exist
         if(i.first == item)
           i.second = stock;
       }
